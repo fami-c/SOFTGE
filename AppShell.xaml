@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SOFTGE.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SOFTGE"
+    Shell.FlyoutBehavior="Disabled"
+    Title="SOFTGE">
+
+    <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="Home" Order="Primary" Priority="0" Clicked="GoHomingPage" />
+    </Shell.ToolbarItems>
+    <Shell.MenuBarItems>
+        <MenuBarItem Text="Criar">
+            <MenuFlyoutItem Text="Novo Produto" Clicked="OnNewClicked" />
+            <MenuFlyoutItem Text="Nova Categoria" Clicked="OnFindClicked" />
+        </MenuBarItem>
+        <MenuBarItem Text="Exibir">
+            <MenuFlyoutItem Text="Produtos" Clicked="OnViewAllClicked" />
+            <MenuFlyoutItem Text="Estoque" Clicked="OnViewAllClicked" />
+            <MenuFlyoutItem Text="Pedidos" Clicked="OnViewAllClicked" />
+            <MenuFlyoutItem Text="Fornecedores" Clicked="OnViewAllClicked" />
+            <MenuFlyoutItem Text="Historico" Clicked="ShowSellingHistory" />
+        </MenuBarItem>
+        <MenuBarItem Text="Ajuda"></MenuBarItem>
+    </Shell.MenuBarItems>
+</Shell>

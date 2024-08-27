@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOFTGE.MainPage">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <!-- Grid para os widgets -->
+        <Grid RowSpacing="15" ColumnSpacing="15">
+            <!-- Espaçamento maior entre linhas e colunas -->
+            <!-- Definindo as linhas e colunas do Grid -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Primeiro Frame com ListView no topo esquerdo -->
+            <Frame Grid.Row="0" Grid.Column="0" WidthRequest="160" HeightRequest="160" 
+                   CornerRadius="20" HasShadow="True" BackgroundColor="#ecf0f1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWidgetTapped"/>
+                </Frame.GestureRecognizers>
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Item 1</x:String>
+                            <x:String>Item 2</x:String>
+                            <x:String>Item 3</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+            </Frame>
+
+            <!-- Primeiro Frame com gráfico no topo direito -->
+            <Frame Grid.Row="0" Grid.Column="1" WidthRequest="160" HeightRequest="160" 
+                   CornerRadius="20" HasShadow="True" BackgroundColor="#ecf0f1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWidgetTapped"/>
+                </Frame.GestureRecognizers>
+                <BoxView Color="Blue" />
+            </Frame>
+
+            <!-- Segundo Frame com ListView embaixo à esquerda -->
+            <Frame Grid.Row="1" Grid.Column="0" WidthRequest="160" HeightRequest="160" 
+                   CornerRadius="20" HasShadow="True" BackgroundColor="#ecf0f1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWidgetTapped"/>
+                </Frame.GestureRecognizers>
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Item A</x:String>
+                            <x:String>Item B</x:String>
+                            <x:String>Item C</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+            </Frame>
+
+            <!-- Segundo Frame com gráfico embaixo à direita -->
+            <Frame Grid.Row="1" Grid.Column="1" WidthRequest="160" HeightRequest="160" 
+                   CornerRadius="20" HasShadow="True" BackgroundColor="#ecf0f1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWidgetTapped"/>
+                </Frame.GestureRecognizers>
+                <BoxView Color="Red" />
+            </Frame>
+        </Grid>
+    </Grid>
+
+</ContentPage>
