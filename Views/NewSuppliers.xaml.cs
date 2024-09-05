@@ -1,18 +1,24 @@
 namespace SOFTGE.Views;
+using System.Collections.ObjectModel;
 using Microsoft.Maui.Controls;
 
-public partial class NewItem : ContentPage
+public partial class NewSuppliers : ContentPage
 {
-    public NewItem()
-    {
-        InitializeComponent();
+    ObservableCollection<string> items;
+    public NewSuppliers()
+	{
+		InitializeComponent();
 
+        items = new ObservableCollection<string>();
+
+        ItemsCollectionView.ItemsSource = items;
+
+        // Transformar em uma função para tirar da database
         OptionsPicker.Items.Add("Opção 1");
         OptionsPicker.Items.Add("Opção 2");
         OptionsPicker.Items.Add("Opção 3");
         OptionsPicker.Items.Add("Opção 4");
     }
-
     private async void OnSubmitClicked(object sender, EventArgs e)
     {
         // Obter os valores dos campos
@@ -32,6 +38,21 @@ public partial class NewItem : ContentPage
         // Limpar os campos após o envio
         NameEntry.Text = string.Empty;
         IdEntry.Text = string.Empty;
+    }
+    private void OnAddClicked(object sender, EventArgs e)
+    {
+        // Obter o valor do campo de entrada
+        var input = InputEntry.Text;
+
+        // Verificar se o input não está vazio
+        if (!string.IsNullOrWhiteSpace(input))
+        {
+            // Adicionar o input à lista
+            items.Add(input);
+
+            // Limpar o campo de entrada
+            InputEntry.Text = string.Empty;
+        }
     }
 
     private async void OnConfirmClicked(object sender, EventArgs e)

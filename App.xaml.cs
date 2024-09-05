@@ -1,5 +1,7 @@
-﻿namespace SOFTGE
+﻿
+namespace SOFTGE
 {
+
     public partial class App : Application
     {
         public App()
@@ -7,6 +9,7 @@
             InitializeComponent();
 
             MainPage = new AppShell();
+
         }
     }
 }

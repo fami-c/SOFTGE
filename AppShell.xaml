@@ -13,8 +13,9 @@
     </Shell.ToolbarItems>
     <Shell.MenuBarItems>
         <MenuBarItem Text="Criar">
-            <MenuFlyoutItem Text="Novo Produto" Clicked="OnNewClicked" />
-            <MenuFlyoutItem Text="Nova Categoria" Clicked="OnFindClicked" />
+            <MenuFlyoutItem Text="Novo Produto" Clicked="NewItemClicked" />
+            <MenuFlyoutItem Text="Nova Categoria" Clicked="NewCatClicked" />
+            <MenuFlyoutItem Text="Novo Fornecedor" Clicked="NewSupClicked" />
         </MenuBarItem>
         <MenuBarItem Text="Exibir">
             <MenuFlyoutItem Text="Produtos" Clicked="OnViewAllClicked" />

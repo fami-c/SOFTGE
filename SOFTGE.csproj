@@ -60,14 +60,18 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Views\AboutPage.xaml.cs">
 	    <DependentUpon>AboutPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\Products.xaml.cs">
-	    <DependentUpon>Products.xaml</DependentUpon>
+	  <Compile Update="Views\NewCategory.xaml.cs">
+	    <DependentUpon>NewCategory.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\NewSuppliers.xaml.cs">
+	    <DependentUpon>NewSuppliers.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -75,16 +79,18 @@
 	  <MauiXaml Update="Views\AboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ListItems.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\NewCategory.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\NewItem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Products.xaml">
+	  <MauiXaml Update="Views\NewSuppliers.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Database\" />
 	</ItemGroup>
 
 </Project>

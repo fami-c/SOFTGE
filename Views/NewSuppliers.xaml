@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOFTGE.Views.NewSuppliers">
+
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Cadastrar fornecedor"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   Margin="400,0,400,20"/>
+
+            <Label Text="Nome"
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="NameEntry"
+                   Placeholder="Digite o nome"
+                   Keyboard="Text"
+                   Margin="400,0,400,20"/>
+
+            
+            <Label Text="CNPJ"
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="IdEntry"
+                   Placeholder="Digite o CNPJ"
+                   Keyboard="Numeric"
+                   Margin="400,0,400,20"/>
+            <Label Text="Selecione a categoria do fornecedor:"                    
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Picker x:Name="OptionsPicker" Title="Escolha uma opção" Margin="400,0,400,20"/>
+
+            <Label Text="Contato"
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="CelEntry"
+                   Placeholder="Digite o telefone"
+                   Keyboard="Numeric"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Digite o email"
+                   Keyboard="Email"
+                   Margin="400,0,400,20"/>
+
+            <Label Text="Endereço"
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="LocEntry"
+                   Placeholder="Digite o lote"
+                   Keyboard="Text"
+                   Margin="400,0,400,20"/>
+
+            <Label Text="Produtos"
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="InputEntry"
+                   Placeholder="Digite os produtos"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="400,0,400,20"/>
+            <CollectionView x:Name="ItemsCollectionView"
+                        ItemsLayout="HorizontalList"
+                        Margin="400,0,400,20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="LightGray"
+                           CornerRadius="10"
+                           Padding="10"
+                           Margin="5">
+                            <Label Text="{Binding .}"
+                               FontSize="18"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="+"
+                    Clicked="OnAddClicked"
+                    Margin="400,0,920,20"/>
+
+            <Button Text="Enviar"
+                    Clicked="OnSubmitClicked"
+                    Margin="600,40,600,20"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOFTGE.Views.NewCategory"
+             Title="Category">
+    <VerticalStackLayout Spacing="15">
+        <Label Text="Digite o valor:" />
+        <Entry x:Name="InputEntry" Placeholder="Digite aqui" />
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
+            <Button Text="Confirmar" Clicked="OnConfirmClicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
