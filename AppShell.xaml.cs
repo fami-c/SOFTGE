@@ -48,6 +48,11 @@
             await DisplayAlert("Todos","teste", "Ok");
         }
 
+        private async void OnViewProdClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SOFTGE.Views.ProdutosPage());
+        }
+
         private async void ShowSellingHistory(object sender, EventArgs e)
         {
             await DisplayAlert("a", "a", "a");

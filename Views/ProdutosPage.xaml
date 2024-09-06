@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOFTGE.Views.ProdutosPage">
+    <StackLayout Padding="10">
+
+        <Label Text="Produtos Disponíveis" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+
+        <CollectionView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnDefinitions="*,*,*,*,*,*" RowDefinitions="Auto" Margin="50,0,50,0">
+                        <Label Grid.Column="0" Text="Nome"  FontSize="16"/>
+                        <Label Grid.Column="1" Text="Categoria" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="2" Text="Fornecedor" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="3" Text="Locação" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="4" Text="Validade" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="5" Text="Quantidade" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="6" Text="Valor" FontSize="16" HorizontalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <CollectionView x:Name="ProdutosCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnDefinitions="*,*,*,*,*,*" RowDefinitions="Auto" Margin="50,0,50,0">
+                        <Label Grid.Column="0" Text="{Binding Nome}" FontSize="16" />
+                        <Label Grid.Column="1" Text="{Binding Categoria}" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="2" Text="{Binding Fornecedor}" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="3" Text="{Binding Locacao}" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="4" Text="{Binding Validade, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="5" Text="{Binding Quantidade}" FontSize="16" HorizontalOptions="FillAndExpand" />
+                        <Label Grid.Column="6" Text="{Binding Valor, StringFormat='Valor: {0:C}'}" FontSize="16" HorizontalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>

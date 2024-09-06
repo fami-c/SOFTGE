@@ -18,7 +18,7 @@
             <MenuFlyoutItem Text="Novo Fornecedor" Clicked="NewSupClicked" />
         </MenuBarItem>
         <MenuBarItem Text="Exibir">
-            <MenuFlyoutItem Text="Produtos" Clicked="OnViewAllClicked" />
+            <MenuFlyoutItem Text="Produtos" Clicked="OnViewProdClicked" />
             <MenuFlyoutItem Text="Estoque" Clicked="OnViewAllClicked" />
             <MenuFlyoutItem Text="Pedidos" Clicked="OnViewAllClicked" />
             <MenuFlyoutItem Text="Fornecedores" Clicked="OnViewAllClicked" />

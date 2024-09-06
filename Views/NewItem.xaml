@@ -5,75 +5,68 @@
 
     <ScrollView>
         <StackLayout Padding="20">
-            <Label Text="Cadastrar novo produto"
-                   FontSize="24"
-                   HorizontalOptions="Center"
-                   Margin="400,0,400,20"/>
-
-            <Label Text="Nome"
+            <Label Text="Nome do Produto:" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Entry x:Name="NameEntry"
-                   Placeholder="Digite seu nome"
-                   Keyboard="Text"
-                   Margin="400,0,400,20"/>
-
-            <Label Text="ID"
+            <Entry x:Name="NomeEntry" Placeholder="Digite o nome do produto" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Entry x:Name="IdEntry"
-                   Placeholder="Digite seu ID"
-                   Keyboard="Numeric"
-                   Margin="400,0,400,20"/>
 
-            <Label Text="Selecione a categoria do produto:"                    
+            <Label Text="Categoria:" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Picker x:Name="OptionsPicker" Title="Escolha uma opção" Margin="400,0,400,20"/>
-
-            <Label Text="Validade"
+            <Entry x:Name="CategoriaEntry" Placeholder="Digite a categoria" 
                    FontSize="16"
-                   Margin="400,0,400,20"/>
-            <Entry x:Name="ValEntry"
-                   Placeholder="Digite a validade"
-                   Keyboard="Numeric"
                    Margin="400,0,400,20"/>
             
-            <Label Text="Fornecedor"
+            <Label Text="Validade:" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Entry x:Name="SupEntry"
-                   Placeholder="Digite o fornecedor"
-                   Keyboard="Text"
+            <DatePicker x:Name="ValidadePicker" 
+                   FontSize="16"
                    Margin="400,0,400,20"/>
 
-            <Label Text="Locação"
+            <Label Text="Fornecedor:" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Entry x:Name="LocEntry"
-                   Placeholder="Digite o lote"
-                   Keyboard="Text"
+            <Entry x:Name="FornecedorEntry" Placeholder="Digite o fornecedor" 
+                   FontSize="16"
                    Margin="400,0,400,20"/>
 
-            <Label Text="Quantidade"
+            <Label Text="Locação:" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Entry x:Name="QtEntry"
-                   Placeholder="Digite a quantidade"
-                   Keyboard="Numeric"
+            <Entry x:Name="LocacaoEntry" Placeholder="Digite a locação" 
+                   FontSize="16"
                    Margin="400,0,400,20"/>
 
-            <Label Text="Valor"
+            <Label Text="Quantidade:" 
                    FontSize="16"
                    Margin="400,0,400,20"/>
-            <Entry x:Name="PrEntry"
-                   Placeholder="Digite o valor"
-                   Keyboard="Numeric"
+            <Entry x:Name="QuantidadeEntry" Keyboard="Numeric" Placeholder="Digite a quantidade" 
+                   FontSize="16"
                    Margin="400,0,400,20"/>
+
+            <Label Text="Valor:" 
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+            <Entry x:Name="ValorEntry" Keyboard="Numeric" Placeholder="Digite o valor" 
+                   FontSize="16"
+                   Margin="400,0,400,20"/>
+
 
             <Button Text="Enviar"
                     Clicked="OnSubmitClicked"
                     Margin="600,40,600,20"/>
+
+
+            <CollectionView x:Name="ProdutosCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" Detail="{Binding Fornecedor}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -67,6 +67,9 @@
 	  <Compile Update="Views\AboutPage.xaml.cs">
 	    <DependentUpon>AboutPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\ProdutosPage.xaml.cs">
+	    <DependentUpon>ProdutosPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\NewCategory.xaml.cs">
 	    <DependentUpon>NewCategory.xaml</DependentUpon>
 	  </Compile>
@@ -79,7 +82,7 @@
 	  <MauiXaml Update="Views\AboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ListItems.xaml">
+	  <MauiXaml Update="Views\ProdutosPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\NewCategory.xaml">

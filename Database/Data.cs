@@ -8,36 +8,41 @@ using SOFTGE.Models;
 
 namespace SOFTGE.Data
 {
-    class Database
+    public class ProdutoDatabase
     {
-        private readonly SQLiteAsyncConnection _database;
 
-        public Database(string dbPath)
+        static SQLiteAsyncConnection Database;
+
+
+
+        public ProdutoDatabase(string dbPath)
         {
-            _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Item>().Wait();
+            Database = new SQLiteAsyncConnection(dbPath);
+            Database.CreateTableAsync<Produto>().Wait();
         }
 
-        public Task<List<Item>> GetItemsAsync()
+        // Adicionar produto
+        public static async Task<int> SaveProdutoAsync(Produto produto)
         {
-            return _database.Table<Item>().ToListAsync();
+            return await Database.InsertAsync(produto);
         }
 
-        public Task<int> SaveItemAsync(Item item)
+        // Método para obter todos os produtos da database
+        public static async Task<List<Produto>> GetProdutosAsync()
         {
-            if (item.Id != 0)
-            {
-                return _database.UpdateAsync(item);
-            }
-            else
-            {
-                return _database.InsertAsync(item);
-            }
+            return await Database.Table<Produto>().ToListAsync();
         }
 
-        public Task<int> DeleteItemAsync(Item item)
+        // Atualizar produto
+        public static async Task<int> UpdateProdutoAsync(Produto produto)
         {
-            return _database.DeleteAsync(item);
+            return await Database.UpdateAsync(produto);
+        }
+
+        // Deletar produto
+        public static async Task<int> DeleteProdutoAsync(Produto produto)
+        {
+            return await Database.DeleteAsync(produto);
         }
     }
 }
